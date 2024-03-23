@@ -16,7 +16,16 @@ difficulty: 3
   activated separately from Relay
 - in 2-gang version LED 2 to/can be
   activated separately from Relay
-
+- in some cases, in 1 and 3 relay versions, after aprox 24 hours one relay stop working or switch goes off for few minutes. To fix it, in binary-sensor this has to be added:
+```yaml
+  - platform: gpio
+    id: fixgpio
+    pin: 
+      number: 16
+      mode: 
+        input: True
+        pullup: True
+```
 ![header](/Sonoff_M5_2gang_MB.jpg "Pin header for flashing incl. GPIO00")
 
 ## GPIO Pinout
